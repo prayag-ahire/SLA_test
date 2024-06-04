@@ -1,7 +1,7 @@
 ## This is SLA aplication (Social Learning Application)
 
 The First step
-- For the stater i am creating login , signup , and forgot password system
+- For the starter i am creating login , signup , and forgot password system
 
 ## features
 - user can sign up if they don't have account
