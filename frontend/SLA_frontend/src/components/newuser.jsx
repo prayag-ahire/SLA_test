@@ -1,7 +1,7 @@
 import {useNavigate} from 'react-router-dom'
 export const NewUsers = ()=>{
     const navigate = useNavigate();
-    return <div className=" mr-22 pr-20">
+    return <div className=" mr-22 pr-20 gap-1">
         <div className="text-white text-7xl font-bold ">Welcome To SLA.</div>
         <div className="text-white text-3xl mt-16 font-bold">Join today.</div>
         <div ><button className="py-2 rounded-full bg-white mt-10 text-gray w-[299px]">Sign up with Google</button></div>

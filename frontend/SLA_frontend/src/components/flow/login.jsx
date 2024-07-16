@@ -12,7 +12,7 @@ export const Login = ()=>{
     <div><button className="py-2 rounded-full bg-white mt-10 text-gray w-[299px]">Sign up with Google</button></div>
     <div className="flex my-[12px] text-white"><hr className=" mt-4 w-[134px] bg-[#2F3336]"></hr><div className="pd mt-0.5 ml-2 mr-2">or</div><hr className="mt-4 w-[134px]"></hr></div>
     <div><form><input className="bg-black border-[0.5px] border-zinc-500 rounded-md h-[56px] w-[300px] placeholder-gray-600 placeholder:ml-[10px] text-white" placeholder="Phone,email, or username"></input></form></div>
-    <div><button className="py-2 rounded-full bg-white mt-10 text-gray w-[299px]">Next</button></div>
+    <div><button className="py-2 rounded-full bg-white mt-10 text-gray w-[299px]" onClick={()=>{navigate('/home')}}>Next</button></div>
     <div><button className="py-2 rounded-full  mt-10 border-[1px] text-white border-white-500 w-[299px]">forgot password?</button></div>
     <div className="text-white mt-14 mr-16"><h3>Don't have an account? Sign up</h3></div>
 </div>
