@@ -1,5 +1,16 @@
+import Chats from "../chatcom/chats"
+import Chat from "../chatcom/chat"
+import Searchbar from "../chatcom/searchbar"
+
 export const Message = ()=>{
-    return <div className="bg-slate-100 border-zinc-700">
-        <h1>Hello this is new page</h1>
+    return <div className="grid grid-cols-3 border-zinc-700 ">
+        <div className="container col-span-1">
+            <Searchbar/>
+            <Chats/>
+        </div>
+        <div className=" col-span-2">
+            <Chat/>
+        </div>
+        
     </div>
 }   

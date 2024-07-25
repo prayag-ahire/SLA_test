@@ -9,7 +9,7 @@ export const NewUsers = ()=>{
         const provider = new GoogleAuthProvider();
         signInWithPopup(auth,provider).then(async(result)=>{console.log(result);
             if(result.user){
-                navigate('/home');
+                navigate('/home/following');
             }
         });
     }

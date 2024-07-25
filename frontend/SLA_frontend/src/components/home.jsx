@@ -1,6 +1,6 @@
 import { Link, Outlet } from "react-router-dom"
-import { Message } from "./home/message"
-
+import { signOut } from "firebase/auth"
+import { auth } from "../config"
 export const Home = ()=>{
     return <div className="grid grid-cols-12 gap-5  fixed bg-black h-full">
         <div className="grid pl-32 col-start-1 col-end-4">
@@ -36,8 +36,8 @@ export const Home = ()=>{
             </div>
             </div>
 
-            <div>
-            <div className="flex hover:bg-neutral-900 rounded-full h-10 w-40 items-center justify-center origin-center">
+            <div >
+            <div className="flex hover:bg-neutral-900 rounded-full h-10 w-[130px] items-center justify-center ">
             <svg xmlns="http://www.w3.org/2000/svg"color="white" fill="none" viewBox="0 0 24 20" stroke-width="1.5" stroke="currentColor" class="size-6">
             <path stroke-linecap="round" stroke-linejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 0 1-2.25 2.25h-15a2.25 2.25 0 0 1-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0 0 19.5 4.5h-15a2.25 2.25 0 0 0-2.25 2.25m19.5 0v.243a2.25 2.25 0 0 1-1.07 1.916l-7.5 4.615a2.25 2.25 0 0 1-2.36 0L3.32 8.91a2.25 2.25 0 0 1-1.07-1.916V6.75" />
             </svg>
@@ -68,26 +68,27 @@ export const Home = ()=>{
             <svg xmlns="http://www.w3.org/2000/svg"color="white" fill="none" viewBox="0 0 24 20" stroke-width="1.5" stroke="currentColor" class="size-6">
             <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 6a3.75 3.75 0 1 1-7.5 0 3.75 3.75 0 0 1 7.5 0ZM4.501 20.118a7.5 7.5 0 0 1 14.998 0A17.933 17.933 0 0 1 12 21.75c-2.676 0-5.216-.584-7.499-1.632Z" />
             </svg>
-            <div className="text-white font-bold text-xl pl-4"><Link to='/home/profile'>Profile</Link></div>
+            <div className="text-white font-bold text-xl pl-4 "><Link to='/home/profile'>Profile</Link></div>
             </div>
             </div>
 
-            <div>
-            <div className="flex hover:bg-neutral-900 rounded-full h-10 w-24 items-center justify-center origin-center">
-            <svg xmlns="http://www.w3.org/2000/svg"color="white" fill="none" viewBox="0 0 24 20" stroke-width="1.5" stroke="currentColor" class="size-6">
-            <path stroke-linecap="round" stroke-linejoin="round" d="M8.625 12a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Zm0 0H8.25m4.125 0a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Zm0 0H12m4.125 0a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Zm0 0h-.375M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
-            </svg>
-            <div className="text-white font-bold text-xl pl-4">More</div>
+            <button onClick={()=>signOut(auth)}><div>
+            <div className="flex hover:bg-neutral-900 rounded-full h-10 w-32 items-center justify-center origin-center">
+            <div className="text-white"><svg xmlns="http://www.w3.org/2000/svg"  fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 9V5.25A2.25 2.25 0 0 1 10.5 3h6a2.25 2.25 0 0 1 2.25 2.25v13.5A2.25 2.25 0 0 1 16.5 21h-6a2.25 2.25 0 0 1-2.25-2.25V15m-3 0-3-3m0 0 3-3m-3 3H15" />
+            </svg></div>
+            <div className="text-white font-bold text-xl pl-4">Log out</div>
             </div>
             </div>
+            </button>
 
-            <div><button className="bg-sky-400 rounded-full w-[218px] h-[52px]">Post</button></div>
+            <div><button className="bg-sky-400 rounded-full w-[218px] h-[52px] text-white font-bold text-xl">Post</button></div>
 
             <div className="flex mt-10">
-                <div className="flex items-start justify-center mt-1 mr-2 w-12"><img className="w-72 rounded-full" src='..\src\assets\kirito_kun_by_kazumony_dfpafs4-fullview.jpg'/></div>
-                <div>
-                    <div className="text-white">User name</div>
-                    <div className="text-white">@useruniqeid</div>
+                <div className="flex items-start justify-center mt-1 mr-2 w-10"><img className="w-72 rounded-full" src='..\src\assets\kirito_kun_by_kazumony_dfpafs4-fullview.jpg'/></div>
+                <div className="ml-1">
+                    <div className="text-white h-[20px] font-semibold">User name</div>
+                    <div className="text-gray-500">@useruniqeid</div>
                 </div>
                 <div className="flex items-center ml-16 mb-7 ">
                 <svg xmlns="http://www.w3.org/2000/svg" color="white" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
@@ -97,7 +98,7 @@ export const Home = ()=>{
                 </div>
             </div>
         </div>
-        <div className="col-start-4 col-end-9 border border-zinc-700 h-screen home">
+        <div className="col-start-4 col-end-9 contain-strict border border-zinc-700 h-screen home">
             <div className=" grid grid-cols-2 divide-x border-black h-14 ">
                 <Link to="/home/following" ><div className="text-white h-full border-black  text-center content-center hover:bg-neutral-900">For you</div></Link>
                 <Link to="/home/message" className="border-black"><div className="text-white h-full  text-center content-center hover:bg-neutral-900">Message</div></Link>
@@ -114,7 +115,7 @@ export const Home = ()=>{
             <div className="mt-4 rounded-xl w-[348px] h-[144px] border-[1px] border-zinc-700">
                 <div className="text-white font-bold text-2xl ml-3 mt-2">Subscribe to Premium</div>
                 <div className="text-white text-wrap ml-3 mt-2">Subscribe to unlock new features and if eligible, receive a share of ads revenue.</div>
-                <div className="bg-sky-600 text-white font-semibold text-lg w-28 ml-3 mt-2 h-8 rounded-full justify-center text-center "><button>Subscribe</button></div>
+                <div className="bg-sky-600 text-white font-semibold text-lg w-28 ml-3 mt-2 h-[31px] rounded-full justify-center text-center ">Subscribe</div>
             </div>
             {/* <div className="mt-4 rounded-xl border-[1px] w-[348px] h-[180px] "></div> */}
             <div className="mt-4 rounded-xl border-[1px] w-[348px] h-[510px] border-zinc-700 "><div className="mt-2 text-2xl font-serif font-bold text-white ml-2">list of Event's</div></div>
