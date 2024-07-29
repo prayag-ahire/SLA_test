@@ -2,7 +2,7 @@ import { GoogleAuthProvider, signInWithPopup, signInWithEmailAndPassword } from 
 import { useNavigate } from "react-router-dom";
 import { auth } from "../../config";
 import { useState } from "react";
-import { Link, Outlet } from "react-router-dom"
+import { Link } from "react-router-dom"
 
 
 export const Login = () => {
@@ -48,7 +48,7 @@ export const Login = () => {
                         </svg>
                     </button>
                 </div>
-                <div className="text-white text-4xl font-semibold pr-20">
+            <div className="text-white text-4xl font-semibold text-center">
                     <h1>Sign in to SLA</h1>
                 </div>
                 <div>
@@ -59,16 +59,18 @@ export const Login = () => {
                     <div className="pd mt-0.5 ml-2 mr-2">or</div>
                     <hr className="mt-4 w-[134px]"></hr>
                 </div>
+                <div className="text-center">
                 <form onSubmit={handleSubmit}>
                     <input type="text" autoComplete="given-name" className="bg-black border-[0.5px] border-zinc-500 rounded-md h-[56px] w-[300px] placeholder-gray-600 text-white" placeholder="Phone, email, or username" />
                     <input type="password" className="bg-black border-[0.5px] border-zinc-500 rounded-md h-[56px] w-[300px] placeholder-gray-600 text-white mt-5" placeholder="Password" />
                     <button type="submit" className="py-2 rounded-full bg-white mt-10 text-gray w-[299px] text-lg font-medium">Signin</button>
                 </form>
+                </div>
                 <div>
                     <button className="py-2 rounded-full mt-10 border-[1px] text-white border-white-500 w-[299px]">Forgot password?</button>
                 </div>
                 <div className="text-white mt-14 mr-16">
-                    <h3>Don't have an account? <Link to="/signup">Sign up</Link></h3>
+                    <h3>Don't have an account? <Link to="/signup" className="text-sky-500 font-bold text-base">Sign up</Link></h3>
                 </div>
                 {err && <div className="text-red-500">An error occurred during login. Please try again.</div>}
             </div>

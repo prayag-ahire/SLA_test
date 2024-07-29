@@ -1,7 +1,10 @@
 import { Link, Outlet } from "react-router-dom"
 import { signOut } from "firebase/auth"
 import { auth } from "../config"
+import { useContext } from "react"
+import { AuthContext } from '../context/AuthContext'
 export const Home = ()=>{
+    const {currentUser} = useContext(AuthContext);
     return <div className="grid grid-cols-12 gap-5  fixed bg-black h-full">
         <div className="grid pl-32 col-start-1 col-end-4">
             <div className=" mt-2 ">
@@ -18,14 +21,6 @@ export const Home = ()=>{
             </div>
             </div>
 
-            <div>
-            <div className="flex hover:bg-neutral-900 rounded-full h-10 w-32 items-center justify-center origin-center">
-            <svg xmlns="http://www.w3.org/2000/svg" color="white" fill="none" viewBox="0 0 24 20" stroke-width="1.5" stroke="currentColor" class="size-6">
-            <path stroke-linecap="round" stroke-linejoin="round" d="m21 21-5.197-5.197m0 0A7.5 7.5 0 1 0 5.196 5.196a7.5 7.5 0 0 0 10.607 10.607Z" />
-            </svg>
-            <div className="text-white font-bold text-xl pl-4">Explore</div>
-            </div>
-            </div>
 
             <div>
             <div className="flex hover:bg-neutral-900 rounded-full h-10 w-44 items-center justify-center origin-center">
@@ -39,7 +34,7 @@ export const Home = ()=>{
             <div >
             <div className="flex hover:bg-neutral-900 rounded-full h-10 w-[130px] items-center justify-center ">
             <svg xmlns="http://www.w3.org/2000/svg"color="white" fill="none" viewBox="0 0 24 20" stroke-width="1.5" stroke="currentColor" class="size-6">
-            <path stroke-linecap="round" stroke-linejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 0 1-2.25 2.25h-15a2.25 2.25 0 0 1-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0 0 19.5 4.5h-15a2.25 2.25 0 0 0-2.25 2.25m19.5 0v.243a2.25 2.25 0 0 1-1.07 1.916l-7.5 4.615a2.25 2.25 0 0 1-2.36 0L3.32 8.91a2.25 2.25 0 0 1-1.07-1.916V6.75" />
+            <path stroke-linecap="round" stroke-linejoin="round" d="M15 19.128a9.38 9.38 0 0 0 2.625.372 9.337 9.337 0 0 0 4.121-.952 4.125 4.125 0 0 0-7.533-2.493M15 19.128v-.003c0-1.113-.285-2.16-.786-3.07M15 19.128v.106A12.318 12.318 0 0 1 8.624 21c-2.331 0-4.512-.645-6.374-1.766l-.001-.109a6.375 6.375 0 0 1 11.964-3.07M12 6.375a3.375 3.375 0 1 1-6.75 0 3.375 3.375 0 0 1 6.75 0Zm8.25 2.25a2.625 2.625 0 1 1-5.25 0 2.625 2.625 0 0 1 5.25 0Z" />
             </svg>
             <div className="text-white font-bold text-xl pl-4">Friends</div>
             </div>
@@ -85,9 +80,9 @@ export const Home = ()=>{
             <div><button className="bg-sky-400 rounded-full w-[218px] h-[52px] text-white font-bold text-xl">Post</button></div>
 
             <div className="flex mt-10">
-                <div className="flex items-start justify-center mt-1 mr-2 w-10"><img className="w-72 rounded-full" src='..\src\assets\kirito_kun_by_kazumony_dfpafs4-fullview.jpg'/></div>
+                <div className="flex items-start justify-center mt-1 mr-2 w-10"><img className="w-72 rounded-full" src={currentUser.photoURL}/></div>
                 <div className="ml-1">
-                    <div className="text-white h-[20px] font-semibold">User name</div>
+                    <div className="text-white h-[20px] font-semibold">{currentUser.displayName}</div>
                     <div className="text-gray-500">@useruniqeid</div>
                 </div>
                 <div className="flex items-center ml-16 mb-7 ">

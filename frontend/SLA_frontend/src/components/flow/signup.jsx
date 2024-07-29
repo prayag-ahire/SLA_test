@@ -82,19 +82,19 @@ export const Signup = () => {
             <input
               type="text"
               className="bg-black border-[0.5px] border-zinc-500 rounded-md h-[56px] w-[400px] mt-5 placeholder-gray-600 placeholder:ml-[10px] text-white"
-              placeholder="Name"
+              placeholder=" Name"
               required
             />
             <input
               type="email"
               className="bg-black border-[0.5px] border-zinc-500 rounded-md h-[56px] w-[400px] mt-5 placeholder-gray-600 placeholder:ml-[10px] text-white"
-              placeholder="Email"
+              placeholder=" Email"
               required
             />
             <input
               type="password"
               className="bg-black border-[0.5px] border-zinc-500 rounded-md h-[56px] w-[400px] mt-5 placeholder-gray-600 placeholder:ml-[10px] text-white"
-              placeholder="Password"
+              placeholder=" Password"
               required
             />
             <input type="file" className="mt-4 mr-24 text-white" required />
@@ -104,7 +104,7 @@ export const Signup = () => {
             {err && <span className="text-red-500">Something went wrong</span>}
           </form>
         </div>
-        <div className="text-cyan-600 place-self-end pr-24 mt-4">Use email instead</div>
+        {/* <div className="text-cyan-600 place-self-end pr-24 mt-4">Use email instead</div> */}
         <div className="text-white place-self-start ml-24 mt-4 mb-2">Date of birth</div>
         <div className="text-gray-500 pl-24 pr-20 text-sm">
           <h5>This will not be shown publicly. Confirm your own age, even if this account is for a business, a pet, or something else.</h5>

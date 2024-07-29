@@ -8,9 +8,9 @@ import { Following } from './components/home/following'
 import { Message } from './components/home/message'
 import { Loginpass } from './components/flow/login_password'
 import { Profile } from './components/home/profile'
-import Editprofile from './components/editprofile'
 import {  useContext } from 'react'
 import { AuthContext } from './context/AuthContext'
+import Editprofile from './components/editprofile'
 
 function App() {
 const {currentUser} = useContext(AuthContext)
@@ -35,7 +35,7 @@ const ProtectedRoute = ({children})=>{
           <Route path='following' element={<Following/>}/>
           <Route path='message' element={<Message/>}/>
         </Route>
-        <Route path='editprofile' element={<Editprofile/>}/>
+        <Route path='home/profile/editprofile' element={<Editprofile/>}/>
         <Route path='Loginpass' element={<Loginpass/>}/>
       </Routes>
       </BrowserRouter>
