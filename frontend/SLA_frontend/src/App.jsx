@@ -11,6 +11,8 @@ import { Profile } from './components/home/profile'
 import {  useContext } from 'react'
 import { AuthContext } from './context/AuthContext'
 import Editprofile from './components/editprofile'
+import { Wallet } from './components/home/wallaet'
+import { Combo } from './components/home/combo'
 
 function App() {
 const {currentUser} = useContext(AuthContext)
@@ -34,6 +36,8 @@ const ProtectedRoute = ({children})=>{
           <Route path='profile' element={<Profile/>}/>
           <Route path='following' element={<Following/>}/>
           <Route path='message' element={<Message/>}/>
+          <Route path='wallet' element={<Wallet/>}/>
+          <Route path='combo' element={<Combo/>}/>
         </Route>
         <Route path='home/profile/editprofile' element={<Editprofile/>}/>
         <Route path='Loginpass' element={<Loginpass/>}/>
