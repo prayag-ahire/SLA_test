@@ -17,7 +17,7 @@ export const Home = ()=>{
             <svg xmlns="http://www.w3.org/2000/svg"  color="white" fill="none" viewBox="0 0 24 20" stroke-width="1.5" stroke="currentColor" class="size-6">
             <path stroke-linecap="round" stroke-linejoin="round" d="m2.25 12 8.954-8.955c.44-.439 1.152-.439 1.591 0L21.75 12M4.5 9.75v10.125c0 .621.504 1.125 1.125 1.125H9.75v-4.875c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21h4.125c.621 0 1.125-.504 1.125-1.125V9.75M8.25 21h8.25" />
             </svg>
-            <div className="text-white font-bold text-xl pl-4"><Link to="/home/combo">Home</Link></div>
+            <div className="text-white font-bold text-xl pl-4"><Link to="/home/following">Home</Link></div>
             </div>
             </div>
 
@@ -32,7 +32,7 @@ export const Home = ()=>{
             </div>
 
             <div >
-            <div className="flex hover:bg-neutral-900 rounded-full h-10 w-[130px] items-center justify-center ">
+            <div className="flex hover:bg-neutral-900 rounded-full h-10 w-32  items-center justify-center ">
             <svg xmlns="http://www.w3.org/2000/svg"color="white" fill="none" viewBox="0 0 24 20" stroke-width="1.5" stroke="currentColor" class="size-6">
             <path stroke-linecap="round" stroke-linejoin="round" d="M15 19.128a9.38 9.38 0 0 0 2.625.372 9.337 9.337 0 0 0 4.121-.952 4.125 4.125 0 0 0-7.533-2.493M15 19.128v-.003c0-1.113-.285-2.16-.786-3.07M15 19.128v.106A12.318 12.318 0 0 1 8.624 21c-2.331 0-4.512-.645-6.374-1.766l-.001-.109a6.375 6.375 0 0 1 11.964-3.07M12 6.375a3.375 3.375 0 1 1-6.75 0 3.375 3.375 0 0 1 6.75 0Zm8.25 2.25a2.625 2.625 0 1 1-5.25 0 2.625 2.625 0 0 1 5.25 0Z" />
             </svg>
@@ -40,27 +40,30 @@ export const Home = ()=>{
             </div>
             </div>
 
-            <div>
+            {/* <div>
             <div className="flex hover:bg-neutral-900 rounded-full  h-10 w-40 items-center justify-center origin-center">
             <svg xmlns="http://www.w3.org/2000/svg"color="white" fill="none" viewBox="0 0 24 20" stroke-width="1.5" stroke="currentColor" class="size-6">
             <path stroke-linecap="round" stroke-linejoin="round" d="M17.593 3.322c1.1.128 1.907 1.077 1.907 2.185V21L12 17.25 4.5 21V5.507c0-1.108.806-2.057 1.907-2.185a48.507 48.507 0 0 1 11.186 0Z" />
             </svg>
             <div className="text-white font-bold text-xl pl-4">Bookmark</div>
             </div>
-            </div>
+            </div> */}
 
             <div>
-            <div className="flex hover:bg-neutral-900 rounded-full h-10 w-44 items-center justify-center ">
-            <svg xmlns="http://www.w3.org/2000/svg"color="white" fill="none" viewBox="0 0 24 20" stroke-width="1.5" stroke="currentColor" class="size-6">
-            <path stroke-linecap="round" stroke-linejoin="round" d="M15 19.128a9.38 9.38 0 0 0 2.625.372 9.337 9.337 0 0 0 4.121-.952 4.125 4.125 0 0 0-7.533-2.493M15 19.128v-.003c0-1.113-.285-2.16-.786-3.07M15 19.128v.106A12.318 12.318 0 0 1 8.624 21c-2.331 0-4.512-.645-6.374-1.766l-.001-.109a6.375 6.375 0 0 1 11.964-3.07M12 6.375a3.375 3.375 0 1 1-6.75 0 3.375 3.375 0 0 1 6.75 0Zm8.25 2.25a2.625 2.625 0 1 1-5.25 0 2.625 2.625 0 0 1 5.25 0Z" />
+            <Link to='/home/message'>
+            <div className="flex text-white hover:bg-neutral-900 rounded-full h-10 w-36 items-center justify-center ">
+            <svg className=" w-8" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M20.25 8.511c.884.284 1.5 1.128 1.5 2.097v4.286c0 1.136-.847 2.1-1.98 2.193-.34.027-.68.052-1.02.072v3.091l-3-3c-1.354 0-2.694-.055-4.02-.163a2.115 2.115 0 0 1-.825-.242m9.345-8.334a2.126 2.126 0 0 0-.476-.095 48.64 48.64 0 0 0-8.048 0c-1.131.094-1.976 1.057-1.976 2.192v4.286c0 .837.46 1.58 1.155 1.951m9.345-8.334V6.637c0-1.621-1.152-3.026-2.76-3.235A48.455 48.455 0 0 0 11.25 3c-2.115 0-4.198.137-6.24.402-1.608.209-2.76 1.614-2.76 3.235v6.226c0 1.621 1.152 3.026 2.76 3.235.577.075 1.157.14 1.74.194V21l4.155-4.155" />
             </svg>
-            <div className="text-white font-bold text-xl pl-4">Communities</div>
+
+            <div className="text-white font-bold text-xl pl-4">message</div>
             </div>
+            </Link>
             </div>
 
             <div>
                 <Link to='/home/wallet'>
-                <div className="flex mt-1 text-white hover:bg-neutral-900 h-10 w-32 items-center justify-start  rounded-full pl-1 "><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                <div className="flex mt-1 text-white hover:bg-neutral-900 h-10 w-36  items-center justify-start  rounded-full pl-1 "><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
                 <path stroke-linecap="round" stroke-linejoin="round" d="M21 12a2.25 2.25 0 0 0-2.25-2.25H15a3 3 0 1 1-6 0H5.25A2.25 2.25 0 0 0 3 12m18 0v6a2.25 2.25 0 0 1-2.25 2.25H5.25A2.25 2.25 0 0 1 3 18v-6m18 0V9M3 12V9m18 0a2.25 2.25 0 0 0-2.25-2.25H5.25A2.25 2.25 0 0 0 3 9m18 0V6a2.25 2.25 0 0 0-2.25-2.25H5.25A2.25 2.25 0 0 0 3 6v3" />
                 </svg>
                 <div className="ml-1 text-white font-bold text-xl pl-4">Wallet</div>
@@ -103,8 +106,8 @@ export const Home = ()=>{
                 </div>
             </div>
         </div>
-        <div className="col-start-4 col-end-9 contain-strict border border-zinc-700 h-screen ">
-            <div>
+        <div className=" col-start-4 col-end-9 contain-strict border border-zinc-700 h-full max-h-screen whitespace-nowrap overflow-auto scrollbar-hid scroll">
+            <div >
                 <Outlet/>
             </div>
         </div>

@@ -22,7 +22,7 @@ const Chat = () => {
 </div>
 </div>
       </div>
-      <div className='h-[620px] bg-neutral-800'><Messages/></div>
+      <div className=' bg-neutral-800 h-[680px] '><Messages/></div>
 
       <div><Input/></div>
     </div>

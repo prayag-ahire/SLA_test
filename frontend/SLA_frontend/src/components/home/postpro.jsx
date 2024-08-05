@@ -1,10 +1,10 @@
-export const PostProfile = ()=>{
+export const PostProfile = ({label,img})=>{
     return <div>
         <div className="flex mt-3">
-            <div className="w-10 ml-5"><img className="w-60 rounded-full" src="..\src\assets\kirito_kun_by_kazumony_dfpafs4-fullview.jpg"></img></div>
-            <div className="text-white ml-2">Prayag Ahire</div>
-            <div className="text-gray-500 ml-1">@ahire_prayag</div>
-            <div className="text-gray-500 ml-1">. jun 6</div>
+            <div className="w-10 ml-5"><img className="w-60 rounded-full" src="https://play-lh.googleusercontent.com/_bQv_Bua-oPwO9Lzld3n7nrxew6DUHnk0m30Af_lQSVd_D0a2egLp3E-gXW1p-XFwMgBB6Ra_F5OkBYukg"></img></div>
+            <div className="text-white ml-2">The Flash</div>
+            <div className="text-gray-500 ml-1">@Flash121</div>
+            <div className="text-gray-500 ml-1">. jun 7</div>
             <div className=" border border-gray-50 rounded-full text-white w-20 h-7 text-center items-center ml-44 ">Promote</div>
             <div className="text-white ml-2"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
             <path stroke-linecap="round" stroke-linejoin="round" d="M6.75 12a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0ZM12.75 12a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0ZM18.75 12a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Z" />
@@ -12,10 +12,10 @@ export const PostProfile = ()=>{
             </div>
         </div>
 
-        <div className="text-white ml-[70px] h-80">
-            Massage
+        <div className="text-white ml-[70px] h-96 text-wrap">
+            {label} 
+            <img className="h-64 w-[500px]" src={img}/>
         </div>
-
         <div className="flex space-x-[75px] w-full mb-10 ml-[70px]">
             <div className="text-white" ><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
                 <path stroke-linecap="round" stroke-linejoin="round" d="M12 20.25c4.97 0 9-3.694 9-8.25s-4.03-8.25-9-8.25S3 7.444 3 12c0 2.104.859 4.023 2.273 5.48.432.447.74 1.04.586 1.641a4.483 4.483 0 0 1-.923 1.785A5.969 5.969 0 0 0 6 21c1.282 0 2.47-.402 3.445-1.087.81.22 1.668.337 2.555.337Z" />
@@ -48,7 +48,6 @@ export const PostProfile = ()=>{
             </div>
 
         </div>
-            <div className="h-80 bg-gray-300 ">
-            </div>
+            {/* <div className="h-80 bg-gray-300 "></div> */}
     </div>
 }   

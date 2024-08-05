@@ -43,14 +43,14 @@ const Searchbar = () => {
   };
 
   return (
-    <div className='bg-black ml-1'>
+    <div className='bg-black ml-1 mt-3 '>
       <div>
         <input
           type='text'
           ref={inputRef}
           onChange={(e) => setUsername(e.target.value)}
           onKeyDown={handleKey}
-          className='placeholder:text-center font-semibold rounded-full h-8 mb-2'
+          className='pl-1 placeholder:text-center font-semibold rounded-full h-8 mb-2'
           placeholder='Find Friends'
         />
       </div>
