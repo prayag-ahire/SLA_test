@@ -1,10 +1,14 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import Messages from './messages'
 import Input from './input'
+import { AuthContext } from "../../context/AuthContext"
+import { auth } from "../../config"
 const Chat = () => {
+  const noChatSelected = true;
   return (
     <div className=''>
-      <div className='flex bg-neutral-900 h-10 items-center text-white'>
+      { noChatSelected ? <NoChatSelected/> : (
+        <><div className='flex bg-neutral-900 h-10 items-center text-white'>
         <div className='mr-[240px] ml-2'>Name</div>
 
         <div className='flex space-x-4 '>
@@ -24,9 +28,23 @@ const Chat = () => {
       </div>
       <div className=' bg-neutral-800 h-[680px] '><Messages/></div>
 
-      <div><Input/></div>
+      <div><Input/></div></>
+      )}
     </div>
   )
 }
 
 export default Chat
+
+const NoChatSelected = () => {
+  const { currentUser } = useContext(AuthContext);
+	return (
+		<div className='flex  items-center justify-center w-full h-full'>
+			<div className='flex flex-col mt-[80%] items-center text-center sm:text-lg md:text-xl text-gray-200 font-semibold  gap-2'>
+				<p>Welcome 👋 {currentUser.display} ❄</p>
+				<p>Select a chat to start messaging</p>
+				{/* <TiMessages className='text-3xl md:text-6xl text-center' /> */}
+			</div>
+		</div>
+	);
+};
