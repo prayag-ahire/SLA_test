@@ -4,7 +4,7 @@ import Input from './input'
 import { AuthContext } from "../../context/AuthContext"
 import { auth } from "../../config"
 const Chat = () => {
-  const noChatSelected = true;
+  const noChatSelected = false;
   return (
     <div className=''>
       { noChatSelected ? <NoChatSelected/> : (
@@ -26,7 +26,7 @@ const Chat = () => {
 </div>
 </div>
       </div>
-      <div className=' bg-neutral-800 h-[680px] '><Messages/></div>
+      <div className=' bg-slate-300 h-[680px] '><Messages/></div>
 
       <div><Input/></div></>
       )}

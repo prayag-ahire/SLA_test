@@ -8,12 +8,10 @@ const Messages = () => {
         <Message2 label={"hii"}/>
         <Message2 label={"hwo are you?"}/>
         <Message  label={"i am good , how are you doing?"}/>
-        {/* <Message/> */}
-        {/* <Message/>
         <Message/>
         <Message/>
         <Message/>
-        <Message/> */}
+        <Message/> 
         <div className='h-44'></div>
     </div>
   )

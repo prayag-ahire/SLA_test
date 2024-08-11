@@ -13,6 +13,7 @@ import { AuthContext } from './context/AuthContext'
 import Editprofile from './components/editprofile'
 import { Wallet } from './components/home/wallet'
 import { Moneysend } from './components/home/moneysend'
+import Toaster from 'react-hot-toast'
 
 
 function App() {
@@ -44,6 +45,7 @@ const ProtectedRoute = ({children})=>{
         <Route path='Loginpass' element={<Loginpass/>}/>
       </Routes>
       </BrowserRouter>
+      <Toaster/>
     </div> 
   )
 }
