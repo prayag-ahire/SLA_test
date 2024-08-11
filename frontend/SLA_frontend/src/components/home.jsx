@@ -93,7 +93,7 @@ export const Home = ()=>{
             <div><button className="bg-sky-400 rounded-full w-[218px] h-[52px] text-white font-bold text-xl">Post</button></div>
 
             <div className="flex mt-10">
-                <div className="flex items-start justify-center mt-1 mr-2 w-10"><img className="w-72 rounded-full" src={currentUser.photoURL}/></div>
+                <div className="flex items-start justify-center mt-1 mr-2 w-[30px] h-[30px] "><img className="rounded-full" src={currentUser.photoURL}/></div>
                 <div className="ml-1">
                     <div className="text-white h-[20px] font-semibold">{currentUser.displayName}</div>
                     <div className="text-gray-500">@useruniqeid</div>

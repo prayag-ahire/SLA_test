@@ -4,7 +4,7 @@ import { auth, db, storage } from "../../config";
 import { useState } from "react";
 import { ref, uploadBytesResumable, getDownloadURL } from "firebase/storage";
 import { doc, setDoc } from "firebase/firestore";
-import Signupv  from "../hooks/signupv";
+import Signupv  from "../catchup/signupv";
 
 export const Signup = () => {
   const navigate = useNavigate();
@@ -14,6 +14,7 @@ export const Signup = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
+    const fullName = e.target[0].value;
     const displayName = e.target[0].value;
     const username = e.target[1].value;
     const email = e.target[2].value;
@@ -22,7 +23,7 @@ export const Signup = () => {
     const gender = e.target[5].value;
     const file = e.target[6].files[0];
 
-    Signupv({displayName,username,email,password,confirmPassword,gender})
+    Signupv({fullName,username,email,password,confirmPassword,gender})
 
     if (password !== confirmPassword) {
       setPasswordMismatch(true);

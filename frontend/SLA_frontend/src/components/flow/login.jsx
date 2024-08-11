@@ -3,11 +3,13 @@ import { useNavigate } from "react-router-dom";
 import { auth } from "../../config";
 import { useState } from "react";
 import { Link } from "react-router-dom"
+import loginv from "../catchup/loginv";
 
 
 export const Login = () => {
     const navigate = useNavigate();
     const [err, setErr] = useState(false);
+    
 
     const googleLogin = () => {
         const provider = new GoogleAuthProvider();
@@ -26,8 +28,11 @@ export const Login = () => {
 
     const handleSubmit = async (e) => {
         e.preventDefault();
-        const email = e.target[0].value;
-        const password = e.target[1].value;
+        const username =  e.target[0].value;
+        const email = e.target[1].value;
+        const password = e.target[2].value;
+
+        await loginv({username,password});
 
         try {
             await signInWithEmailAndPassword(auth, email, password);
@@ -49,7 +54,7 @@ export const Login = () => {
                     </button>
                 </div>
             <div className="text-white text-4xl font-semibold text-center">
-                    <h1>Sign in to SLA</h1>
+                    <h1>Signin to SLA</h1>
                 </div>
                 <div>
                     <button className="py-2 rounded-full bg-white mt-10 text-gray w-[299px]" onClick={googleLogin}>Sign up with Google</button>
@@ -61,7 +66,14 @@ export const Login = () => {
                 </div>
                 <div className="text-center">
                 <form onSubmit={handleSubmit}>
-                    <input type="text" autoComplete="given-name" className="bg-black border-[0.5px] border-zinc-500 rounded-md h-[56px] w-[300px] placeholder-gray-600 text-white" placeholder="Phone, email, or username" />
+                <input
+                            type="text"
+                            autoComplete="username"
+                            className="bg-black border-[0.5px] border-zinc-500 rounded-md h-[56px] w-[300px] placeholder-gray-600 text-white"
+                            placeholder="Username"
+                            required
+                        />
+                    <input type="text" autoComplete="given-name" className="mt-5 bg-black border-[0.5px] border-zinc-500 rounded-md h-[56px] w-[300px] placeholder-gray-600 text-white" placeholder="Phone, email, or username" />
                     <input type="password" className="bg-black border-[0.5px] border-zinc-500 rounded-md h-[56px] w-[300px] placeholder-gray-600 text-white mt-5" placeholder="Password" />
                     <button type="submit" className="py-2 rounded-full bg-white mt-10 text-gray w-[299px] text-lg font-medium">Signin</button>
                 </form>

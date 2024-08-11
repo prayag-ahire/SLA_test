@@ -1,15 +1,21 @@
-import React, { useContext } from 'react'
+import React, { useContext, useEffect } from 'react'
 import Messages from './messages'
 import Input from './input'
 import { AuthContext } from "../../context/AuthContext"
 import { auth } from "../../config"
+import useConversetion from "../zustand/useconversetion"
+
+
+
 const Chat = () => {
-  const noChatSelected = false;
+  const {selectedConversetion , setSelectedConversetion} = useConversetion();
+
+  
   return (
     <div className=''>
-      { noChatSelected ? <NoChatSelected/> : (
+      { !selectedConversetion ? (<NoChatSelected/>) : (
         <><div className='flex bg-neutral-900 h-10 items-center text-white'>
-        <div className='mr-[240px] ml-2'>Name</div>
+        <div className='mr-[240px] ml-2'>{selectedConversetion.fullName}</div>
 
         <div className='flex space-x-4 '>
         <div><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
@@ -28,7 +34,7 @@ const Chat = () => {
       </div>
       <div className=' bg-slate-300 h-[680px] '><Messages/></div>
 
-      <div><Input/></div></>
+      <div><Inpu  t/></div></>
       )}
     </div>
   )
@@ -43,7 +49,6 @@ const NoChatSelected = () => {
 			<div className='flex flex-col mt-[80%] items-center text-center sm:text-lg md:text-xl text-gray-200 font-semibold  gap-2'>
 				<p>Welcome 👋 {currentUser.display} ❄</p>
 				<p>Select a chat to start messaging</p>
-				{/* <TiMessages className='text-3xl md:text-6xl text-center' /> */}
 			</div>
 		</div>
 	);
