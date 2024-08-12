@@ -3,13 +3,17 @@ import { useNavigate } from "react-router-dom";
 import { auth } from "../../config";
 import { useState } from "react";
 import { Link } from "react-router-dom"
-import loginv from "../catchup/loginv";
+import useLogin from "../catchup/loginv";
+
 
 
 export const Login = () => {
     const navigate = useNavigate();
     const [err, setErr] = useState(false);
-    
+    const [username1,setUsername] = useState("");
+    const [password1,setPassword] = useState("");
+
+    const {loginv} = useLogin();
 
     const googleLogin = () => {
         const provider = new GoogleAuthProvider();
@@ -27,12 +31,14 @@ export const Login = () => {
     };
 
     const handleSubmit = async (e) => {
+        console.log(username1,"and",password1);
         e.preventDefault();
-        const username =  e.target[0].value;
+        await loginv({username1,password1});
+
         const email = e.target[1].value;
         const password = e.target[2].value;
+        
 
-        await loginv({username,password});
 
         try {
             await signInWithEmailAndPassword(auth, email, password);
@@ -72,9 +78,11 @@ export const Login = () => {
                             className="bg-black border-[0.5px] border-zinc-500 rounded-md h-[56px] w-[300px] placeholder-gray-600 text-white"
                             placeholder="Username"
                             required
+                            value={username1}
+                            onChange={(e)=> setUsername(e.target.value)}
                         />
                     <input type="text" autoComplete="given-name" className="mt-5 bg-black border-[0.5px] border-zinc-500 rounded-md h-[56px] w-[300px] placeholder-gray-600 text-white" placeholder="Phone, email, or username" />
-                    <input type="password" className="bg-black border-[0.5px] border-zinc-500 rounded-md h-[56px] w-[300px] placeholder-gray-600 text-white mt-5" placeholder="Password" />
+                    <input type="password" value={password1} onChange={(e)=>setPassword(e.target.value)} className="bg-black border-[0.5px] border-zinc-500 rounded-md h-[56px] w-[300px] placeholder-gray-600 text-white mt-5" placeholder="Password" />
                     <button type="submit" className="py-2 rounded-full bg-white mt-10 text-gray w-[299px] text-lg font-medium">Signin</button>
                 </form>
                 </div>

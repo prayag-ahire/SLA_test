@@ -43,7 +43,6 @@ const ProtectedRoute = ({children})=>{
         </Route>
         <Route path='home/wallet/payment' element={<Moneysend/>}/>
         <Route path='home/profile/editprofile' element={<Editprofile/>}/>
-        <Route path='Loginpass' element={<Loginpass/>}/>
       </Routes>
       </BrowserRouter>
       <Toaster/>
