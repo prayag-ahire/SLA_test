@@ -3,7 +3,10 @@ import { signOut } from "firebase/auth"
 import { auth } from "../config"
 import { useContext } from "react"
 import { AuthContext } from '../context/AuthContext'
+import useLogout from "./catchup/logoutv"
+
 export const Home = ()=>{
+    const {logout} =useLogout();
     const {currentUser} = useContext(AuthContext);
     return <div className="grid grid-cols-12 gap-5  fixed bg-black h-full">
         <div className="grid pl-32 col-start-1 col-end-4">
@@ -23,12 +26,14 @@ export const Home = ()=>{
 
 
             <div>
+            <Link to='/home/notification'>
             <div className="flex hover:bg-neutral-900 rounded-full h-10 w-44 items-center justify-center origin-center">
             <svg xmlns="http://www.w3.org/2000/svg" color="white" fill="none" viewBox="0 0 24 20" stroke-width="1.5" stroke="currentColor" class="size-6">
             <path stroke-linecap="round" stroke-linejoin="round" d="M14.857 17.082a23.848 23.848 0 0 0 5.454-1.31A8.967 8.967 0 0 1 18 9.75V9A6 6 0 0 0 6 9v.75a8.967 8.967 0 0 1-2.312 6.022c1.733.64 3.56 1.085 5.455 1.31m5.714 0a24.255 24.255 0 0 1-5.714 0m5.714 0a3 3 0 1 1-5.714 0" />
             </svg>
             <div className="text-white font-bold text-xl pl-4">Notification</div>
             </div>
+            </Link>
             </div>
 
             <div >
@@ -40,14 +45,7 @@ export const Home = ()=>{
             </div>
             </div>
 
-            {/* <div>
-            <div className="flex hover:bg-neutral-900 rounded-full  h-10 w-40 items-center justify-center origin-center">
-            <svg xmlns="http://www.w3.org/2000/svg"color="white" fill="none" viewBox="0 0 24 20" stroke-width="1.5" stroke="currentColor" class="size-6">
-            <path stroke-linecap="round" stroke-linejoin="round" d="M17.593 3.322c1.1.128 1.907 1.077 1.907 2.185V21L12 17.25 4.5 21V5.507c0-1.108.806-2.057 1.907-2.185a48.507 48.507 0 0 1 11.186 0Z" />
-            </svg>
-            <div className="text-white font-bold text-xl pl-4">Bookmark</div>
-            </div>
-            </div> */}
+         
 
             <div>
             <Link to='/home/message'>
@@ -80,12 +78,12 @@ export const Home = ()=>{
             </div>
             </div>
 
-            <button onClick={()=>signOut(auth)}><div>
+            <button onClick={()=>{signOut(auth);logout}}><div>
             <div className="flex hover:bg-neutral-900 rounded-full h-10 w-32 items-center justify-center origin-center">
             <div className="text-white"><svg xmlns="http://www.w3.org/2000/svg"  fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
             <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 9V5.25A2.25 2.25 0 0 1 10.5 3h6a2.25 2.25 0 0 1 2.25 2.25v13.5A2.25 2.25 0 0 1 16.5 21h-6a2.25 2.25 0 0 1-2.25-2.25V15m-3 0-3-3m0 0 3-3m-3 3H15" />
             </svg></div>
-            <div className="text-white font-bold text-xl pl-4">Log out</div>
+            <div className="text-white font-bold text-xl pl-4" >Log out</div>
             </div>
             </div>
             </button>
@@ -106,11 +104,12 @@ export const Home = ()=>{
                 </div>
             </div>
         </div>
-        <div className=" col-start-4 col-end-9 contain-strict border border-zinc-700 h-full max-h-screen whitespace-nowrap overflow-auto scrollbar-hid scroll">
-            <div >
-                <Outlet/>
-            </div>
-        </div>
+        <div className="col-start-4 col-end-9 flex flex-col border border-zinc-700 h-full max-h-screen overflow-hidden">
+  <div className="flex-1 overflow-auto">
+    <Outlet />
+  </div>
+</div>
+
         <div className="col-start-9 col-end-12 h-screen w-screen">
             <div className="flex bg-zinc-800  rounded-full w-[350px] h-[44px] mt-2"><div className=" pl-4 pt-2.5 "><svg xmlns="http://www.w3.org/2000/svg" color="white" fill="none" viewBox="0 0 24 20" stroke-width="1.5" stroke="currentColor" class="size-5">
             <path stroke-linecap="round" stroke-linejoin="round" d="m21 21-5.197-5.197m0 0A7.5 7.5 0 1 0 5.196 5.196a7.5 7.5 0 0 0 10.607 10.607Z" />

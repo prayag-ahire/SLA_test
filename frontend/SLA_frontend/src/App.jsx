@@ -5,7 +5,7 @@ import { Login } from './components/flow/login'
 import { Home } from './components/home'
 import { Lang } from './components/lang'
 import { Following } from './components/home/following'
-import { Message } from './components/home/message'
+import { Message } from './components/home/chat_app'
 import { Loginpass } from './components/flow/login_password'
 import { Profile } from './components/home/profile'
 import {  useContext } from 'react'
@@ -14,6 +14,7 @@ import Editprofile from './components/editprofile'
 import { Wallet } from './components/home/wallet'
 import { Moneysend } from './components/home/moneysend'
 import Toaster from 'react-hot-toast'
+import Notification from './components/home/notification'
 
 
 function App() {
@@ -38,6 +39,7 @@ const ProtectedRoute = ({children})=>{
           <Route path='following' element={<Following/>}/>
           <Route path='message' element={<Message/>}/>
           <Route path='wallet' element={<Wallet/>}/>
+          <Route path='notification' element={<Notification/>}/>
         </Route>
         <Route path='home/wallet/payment' element={<Moneysend/>}/>
         <Route path='home/profile/editprofile' element={<Editprofile/>}/>
