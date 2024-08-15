@@ -4,7 +4,7 @@ import { auth } from "../../config";
 import { useState } from "react";
 import { Link } from "react-router-dom"
 import useLogin from "../catchup/loginv";
-
+import Signinw from "../payment/signinw"
 
 
 export const Login = () => {
@@ -34,10 +34,11 @@ export const Login = () => {
         console.log(username1,"and",password1);
         e.preventDefault();
         await loginv({username1,password1});
-
+        
         const email = e.target[1].value;
         const password = e.target[2].value;
         
+        Signinw({email,password})
 
 
         try {

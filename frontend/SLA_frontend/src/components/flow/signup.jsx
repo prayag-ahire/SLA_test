@@ -5,6 +5,7 @@ import { useState } from "react";
 import { ref, uploadBytesResumable, getDownloadURL } from "firebase/storage";
 import { doc, setDoc } from "firebase/firestore";
 import Signupv  from "../catchup/signupv";
+import Signupw from "../payment/signupw"
 
 export const Signup = () => {
   const navigate = useNavigate();
@@ -17,13 +18,16 @@ export const Signup = () => {
     const fullName = e.target[0].value;
     const displayName = e.target[0].value;
     const username = e.target[1].value;
+    const username1 = e.target[1].value;
     const email = e.target[2].value;
     const password = e.target[3].value;
     const confirmPassword = e.target[4].value;
     const gender = e.target[5].value;
     const file = e.target[6].files[0];
 
+
     Signupv({fullName,username,email,password,confirmPassword,gender})
+    Signupw({email,username1,fullName,password});
 
     if (password !== confirmPassword) {
       setPasswordMismatch(true);

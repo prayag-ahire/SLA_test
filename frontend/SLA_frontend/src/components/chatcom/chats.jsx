@@ -24,7 +24,7 @@ const Chats = ({ conversation }) => {
                     {conversation.fullName}
                 </div>
                 <div className={`${isSelected ? "text-black" : "text-white"}`}>
-                    last text
+                    {}
                 </div>
             </div>
         </div>
